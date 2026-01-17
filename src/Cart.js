@@ -1,5 +1,3 @@
-const Product = require("./Product")
-
 class Cart  {
     constructor(){
         this.products = []
@@ -17,11 +15,11 @@ class Cart  {
 
     calculatePriceWithDiscount(percent) {
         const sum = this.products.reduce((total, product) => total + product.price, 0)
-
         const discount = (sum * percent) / 100
         const priceWithDiscount = sum - discount
 
         return {
+        sum,
         discount,
         priceWithDiscount}
     }
